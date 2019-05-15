@@ -1,0 +1,14 @@
+{
+  "name": "deck.gl",
+  "license": "MIT",
+  "tags": ["react", "deck.gl"],
+  "classPath": "src",
+  "contributors": [
+    "kevinresol"
+  ],
+  "releasenote": "initial release",
+  "version": "0.0.0",
+  "dependencies": {
+    "react-map-gl": ""
+  }
+}
