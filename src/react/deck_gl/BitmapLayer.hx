@@ -11,7 +11,7 @@ typedef BitmapLayerOptions = {
 	> BaseLayerOptionsWithoutData,
 	
 	?image:Bitmap,
-	?bounds:Array<Float>, // [left, bottom, right, top]
+	?bounds:EitherType<Array<Float>, Array<Array<Float>>>, // [left, bottom, right, top] or [[left, bottom], [left, top], [right, top], [right, bottom]]
 	?desaturate:Float,
 	?transparentColor:Array<Int>, // The color to use for transparent pixels, in [r, g, b, a]. Each component is in the [0, 255] range.
 	?tintColor:Array<Int>, // The color to tint the bitmap by, in [r, g, b]. Each component is in the [0, 255] range.
