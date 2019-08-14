@@ -1,14 +1,49 @@
 package react.deck_gl;
 
 import haxe.Constraints;
+import react.ReactComponent;
 
-extern class Layer {
+@:jsRequire('@deck.gl/core', 'Layer')
+extern class Layer<P:{}>  extends ReactComponentOfProps<P>  {
 	var id:String;
+	
+	function new(props:P);
+	
+	function shouldUpdateState(obj:{
+		props:P,
+		oldProps:P,
+		context:Any,
+		oldContext:Any,
+		changeFlags:ChangeFlags
+	}):Bool;
+	
+	
+	// ReactComponent rip-off
+	// var state:Any;
+	// var context:Any;
+	// var props:P;
+	// function setState(v:Any):Void;
+	static inline function fromHxx():Dynamic throw 'Layer cannot be rendered directly';
+}
+
+typedef ChangeFlags = {
+	dataChanged:Bool,
+	propsChanged:Bool,
+	viewportChanged:Bool,
+	somethingChanged:Bool,
+	propsOrDataChanged:Bool,
+	stateChanged:Bool,
+	updateTriggersChanged:Bool,
 }
 
 typedef BaseLayerOptions<Data> = {
-	?id:String,
+	> BaseLayerOptionsWithoutData,
 	?data:Data,
+}
+
+
+typedef BaseLayerOptionsWithoutData = {
+	?id:String,
 	?visible:Bool,
 	?opacity:Float,
 	?pickable:Bool,

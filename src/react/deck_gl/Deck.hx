@@ -9,8 +9,8 @@ extern class Deck extends ReactComponentOfProps<DeckProps> {}
 typedef DeckProps = {
 	?viewState:ViewState,
 	?controller:Bool,
-	?layers:Array<Layer>,
+	?layers:Array<Layer<{}>>,
 	?children:ReactFragment,
 	?onViewStateChange:{viewState:ViewState}->Void,
-	?onClick:PickingInfo->Dynamic->Void,
+	?onClick:PickingInfo<{}>->Dynamic->Void,
 }

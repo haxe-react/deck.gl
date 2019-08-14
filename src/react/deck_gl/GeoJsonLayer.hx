@@ -5,12 +5,10 @@ import haxe.extern.EitherType;
 import react.deck_gl.Layer;
 
 @:jsRequire('@deck.gl/layers', 'GeoJsonLayer')
-extern class GeoJsonLayer extends Layer {
-	function new(opt:GeoJsonLayerOptions);
-}
+extern class GeoJsonLayer<T> extends Layer<GeoJsonLayerOptions<T>> {}
 
-typedef GeoJsonLayerOptions = {
-	> BaseLayerOptions<FeatureCollection<Geometry>>, // actually can be any geojson
+typedef GeoJsonLayerOptions<T> = {
+	> BaseLayerOptions<FeatureCollection<Geometry, T>>, // actually can be any geojson
 	
 	?mode:String,
 	
@@ -36,10 +34,10 @@ typedef GeoJsonLayerOptions = {
 	?fp64:Bool,
 	?material:Dynamic,
 	
-	?getLineColor:EitherType<Array<Int>, Feature<Geometry>->Array<Int>>,
-	?getFillColor:EitherType<Array<Int>, Feature<Geometry>->Array<Int>>,
-	?getRadius:EitherType<Float, Feature<Geometry>->Float>,
-	?getLineWidth:EitherType<Float, Feature<Geometry>->Bool->String->Float>,
-	?getElevation:EitherType<Float, Feature<Geometry>->Float>,
-	?getLineDashArray:EitherType<Array<Int>, Feature<Geometry>->Array<Int>>,
+	?getLineColor:EitherType<Array<Int>, Feature<Geometry, T>->Array<Int>>,
+	?getFillColor:EitherType<Array<Int>, Feature<Geometry, T>->Array<Int>>,
+	?getRadius:EitherType<Float, Feature<Geometry, T>->Float>,
+	?getLineWidth:EitherType<Float, Feature<Geometry, T>->Bool->String->Float>,
+	?getElevation:EitherType<Float, Feature<Geometry, T>->Float>,
+	?getLineDashArray:EitherType<Array<Int>, Feature<Geometry, T>->Array<Int>>,
 }

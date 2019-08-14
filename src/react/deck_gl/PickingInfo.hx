@@ -1,10 +1,11 @@
 package react.deck_gl;
 
-typedef PickingInfo = {
-	layer:Layer,
-	index:Int,
-	object:Dynamic,
+typedef PickingInfo<T:{}> = {
 	x:Float,
 	y:Float,
 	coordinate:Array<Float>, // [lng, lat]
+	index:Int,
+	layer:Layer<T>,
+	object:Dynamic,
 }
+
