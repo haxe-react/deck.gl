@@ -4,7 +4,7 @@ import haxe.Constraints;
 import react.ReactComponent;
 
 @:jsRequire('@deck.gl/core', 'Layer')
-extern class Layer<P:{}>  extends ReactComponentOfProps<P>  {
+extern class Layer<P:{}> extends ReactComponentOfProps<P>  {
 	var id:String;
 	
 	function new(props:P);
