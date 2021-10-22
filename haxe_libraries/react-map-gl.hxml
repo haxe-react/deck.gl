@@ -1,0 +1,4 @@
+# @install: lix --silent download "gh://github.com/haxe-react/react-map-gl#c7c9d8819b2d737b03193581186ea3ac7eb631d4" into react-map-gl/0.0.0/github/c7c9d8819b2d737b03193581186ea3ac7eb631d4
+-lib react-next
+-cp ${HAXE_LIBCACHE}/react-map-gl/0.0.0/github/c7c9d8819b2d737b03193581186ea3ac7eb631d4/src
+-D react-map-gl=0.0.0

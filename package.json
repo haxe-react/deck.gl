@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@danmarshall/deckgl-typings": "^4.9.7",
+    "dts2hx": "^0.16.1"
+  }
+}

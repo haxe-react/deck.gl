@@ -8,7 +8,7 @@ import react.deck_gl.Layer;
 extern class PathLayer<T> extends Layer<PathLayerOptions<T>> {}
 
 typedef PathLayerOptions<T> = {
-	> BaseLayerOptions<Array<T>>,
+	> BasicProps<Array<T>>,
 	
 	?widthUnits:String,
 	?widthScale:Float,

@@ -1,6 +1,8 @@
 package react.deck_gl;
 
-typedef PickingInfo<T:{}> = {
+import react.deck_gl.Layer;
+
+typedef PickingInfo<T:BasicPropsWithoutData> = {
 	x:Float,
 	y:Float,
 	coordinate:Array<Float>, // [lng, lat]

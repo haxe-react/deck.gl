@@ -7,15 +7,15 @@ import react.deck_gl.Layer;
 extern class ColumnLayer<T> extends Layer<ColumnLayerOptions<T>> {}
 
 typedef ColumnLayerOptions<T> = {
-	> BaseLayerOptions<T>,
-	
+	> BasicProps<T>,
+
 	?diskResolution:Int,
-    ?radius:Int,
-    ?extruded:Bool,
-    ?pickable:Bool,
-    ?elevationScale:Int,
-    ?getPosition: Array<Float>,
-    ?getFillColor: Array<Float>,
-    ?getLineColor: Array<Int>,
-    ?getElevation: Float
+	?radius:Int,
+	?extruded:Bool,
+	?pickable:Bool,
+	?elevationScale:Int,
+	?getPosition:Array<Float>,
+	?getFillColor:Array<Float>,
+	?getLineColor:Array<Int>,
+	?getElevation:Float
 }

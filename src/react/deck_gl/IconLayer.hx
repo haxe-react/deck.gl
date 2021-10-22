@@ -7,7 +7,7 @@ import react.deck_gl.Layer;
 extern class IconLayer<T> extends Layer<IconLayerOptions<T>> {}
 
 typedef IconLayerOptions<T> = {
-	> BaseLayerOptions<T>,
+	> BasicProps<T>,
 	
 	?sizeScale:Float,
 	?sizeUnits:String,

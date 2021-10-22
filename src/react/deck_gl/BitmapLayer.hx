@@ -8,7 +8,7 @@ import react.deck_gl.Layer;
 extern class BitmapLayer extends Layer<BitmapLayerOptions> {}
 
 typedef BitmapLayerOptions = {
-	> BaseLayerOptionsWithoutData,
+	> BasicPropsWithoutData,
 	
 	?image:Bitmap,
 	?bounds:EitherType<Array<Float>, Array<Array<Float>>>, // [left, bottom, right, top] or [[left, bottom], [left, top], [right, top], [right, bottom]]

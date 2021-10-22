@@ -1,29 +1,21 @@
 package react.deck_gl;
 
 import haxe.Constraints;
-import react.ReactComponent;
 
 @:jsRequire('@deck.gl/core', 'Layer')
-extern class Layer<P:{}> extends ReactComponentOfProps<P>  {
-	var id:String;
-	
+// @:autoBuild(react.deck_gl.Macro.addHxx())
+extern class Layer<P:BasicPropsWithoutData> {
+	final id:String;
 	function new(props:P);
-	
-	function shouldUpdateState(obj:{
-		props:P,
-		oldProps:P,
-		context:Any,
-		oldContext:Any,
-		changeFlags:ChangeFlags
-	}):Bool;
-	
-	
-	// ReactComponent rip-off
-	// var state:Any;
-	// var context:Any;
-	// var props:P;
-	// function setState(v:Any):Void;
-	static inline function fromHxx():Dynamic throw 'Layer cannot be rendered directly';
+	function shouldUpdateState(obj:UpdateParams<P>):Bool;
+}
+
+typedef UpdateParams<P> = {
+	props:P,
+	oldProps:P,
+	context:Any,
+	oldContext:Any,
+	changeFlags:ChangeFlags
 }
 
 typedef ChangeFlags = {
@@ -36,13 +28,13 @@ typedef ChangeFlags = {
 	updateTriggersChanged:Bool,
 }
 
-typedef BaseLayerOptions<Data> = {
-	> BaseLayerOptionsWithoutData,
+typedef BasicProps<Data> = {
+	> BasicPropsWithoutData,
 	?data:Data,
 }
 
 
-typedef BaseLayerOptionsWithoutData = {
+typedef BasicPropsWithoutData = {
 	?id:String,
 	?visible:Bool,
 	?opacity:Float,

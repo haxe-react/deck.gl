@@ -8,7 +8,7 @@ import react.deck_gl.Layer;
 extern class GeoJsonLayer<T> extends Layer<GeoJsonLayerOptions<T>> {}
 
 typedef GeoJsonLayerOptions<T> = {
-	> BaseLayerOptions<FeatureCollection<Geometry, T>>, // actually can be any geojson
+	> BasicProps<FeatureCollection<Geometry, T>>, // actually can be any geojson
 	
 	?mode:String,
 	
